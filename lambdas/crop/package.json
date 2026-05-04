@@ -1,0 +1,11 @@
+{
+  "name": "crop-lambda",
+  "version": "1.0.0",
+  "description": "Lambda function to crop images into 40x40 circular PNGs",
+  "type": "module",
+  "main": "index.mjs",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.600.0",
+    "sharp": "^0.33.4"
+  }
+}
