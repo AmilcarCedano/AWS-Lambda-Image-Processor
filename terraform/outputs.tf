@@ -37,16 +37,6 @@ output "crop_lambda_name" {
   value       = aws_lambda_function.crop.function_name
 }
 
-output "ecr_upload_repo" {
-  description = "ECR repository URL for upload Lambda"
-  value       = aws_ecr_repository.upload_lambda.repository_url
-}
-
-output "ecr_crop_repo" {
-  description = "ECR repository URL for crop Lambda"
-  value       = aws_ecr_repository.crop_lambda.repository_url
-}
-
 output "vpc_id" {
   description = "ID of the VPC"
   value       = aws_vpc.main.id
@@ -65,9 +55,4 @@ output "aws_account_id" {
 output "aws_region" {
   description = "AWS Region"
   value       = data.aws_region.current.name
-}
-
-output "sns_topic_arn" {
-  description = "SNS topic ARN for alarms"
-  value       = aws_sns_topic.alarms.arn
 }
