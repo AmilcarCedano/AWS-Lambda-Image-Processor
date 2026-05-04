@@ -16,11 +16,12 @@ resource "null_resource" "upload_lambda_deps" {
 # Build: install deps for crop Lambda
 resource "null_resource" "crop_lambda_deps" {
   provisioner "local-exec" {
-    command     = "npm install --omit=dev"
+    command     = "npm install --omit=dev --os=linux --cpu=x64 sharp"
     working_dir = "${path.module}/../lambdas/crop"
   }
   triggers = {
-    package_json = filemd5("${path.module}/../lambdas/crop/package.json")
+    package_json  = filemd5("${path.module}/../lambdas/crop/package.json")
+    force_rebuild = "v4"
   }
 }
 
